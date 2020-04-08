@@ -1,0 +1,78 @@
+*{
+    font-family: "/Assets/Horsal__.ttf";
+    font-style: "Horsal";
+    background-color: black;
+    color: white;
+    border: 1px solid yellow;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 200px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+header .score{
+    position: relative;
+    justify-content: flex-end;
+}
+.score{
+    width: 105px;
+
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+}
+
+.body-intro{
+    display: flex;
+    height: 300px;
+    justify-content: space-evenly;
+}
+.main-block{
+    width: 420px;
+}
+
+.main-block-img{
+    display: ;
+}
+
+.btn-team{
+    display: flex;
+    width: auto;
+    text-align: center;
+
+
+}
+
+.btn-ketchup{
+    border: 3px solid red;
+    padding: 3px;
+    margin: 3px;
+
+}
+
+/* Nuggets */
+
+.questions-nuggets ol{
+    list-style: upper-alpha;
+}
+
+.questions-nuggets li:hover{
+    color: red;
+}
+
+.tv{
+    margin: 30px;
+    border: 4 solid brown;
+}
+
+.screen{
+    background-color: grey;
+    border: 1 solid red;
+    margin: 1em;
+}
