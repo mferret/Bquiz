@@ -2,7 +2,7 @@
 
 let data = [
    {
-        game: '',
+        game: 'Nuggets',
         questions: [
             {questionName:'Quel est le vrai prénom de Chuck Norris?', answers: ["Dave Norris","Johnny Norris", 'Carlos Norris', 'Philippe Norris'], rightAnswer:2},
             {questionName:"Laquelle de ces écoles n'existe pas ?", answers: ['Une école de Sorcellerie', 'Une école de dresseur de Pokémon','Une école de Ninja','Une école de Jedi'], rightAnswer:1},
@@ -36,7 +36,12 @@ let data = [
             {questionName:"Apparaît dans Bob l'Eponge", answers: ['Donald Trump','une étoile de mer', 'les 2'], rightAnswer:1},
             {questionName:"C'est un prédateur", answers: ['Donald Trump','une étoile de mer', 'les 2'], rightAnswer:2},
             {questionName:"S'inquiète du changement climatique", answers: ['Donald Trump','une étoile de mer', 'les 2'], rightAnswer:1},
-            {questionName:'Orange et jaune', answers: ['Donald Trump','une étoile de mer', 'les 2'], rightAnswer:2},            
+            {questionName:'Peut faire rire', answers: ['Un Clone','Un Clown', 'les 2'], rightAnswer:1},
+            {questionName:'Peut faire flipper', answers: ['Un Clone','Un Clown', 'les 2'], rightAnswer:2},
+            {questionName:'Ils se ressemblent tous', answers: ['Un Clone','Un Clown', 'les 2'], rightAnswer:0},
+            {questionName:'Il y en a dans Star Wars', answers: ['Un Clone','Un Clown', 'les 2'], rightAnswer:0},
+            {questionName:'Il y en a dans des films', answers: ['Un Clone','Un Clown', 'les 2'], rightAnswer:2},
+       
         ]
     }
 ]
@@ -86,20 +91,15 @@ window.addEventListener('load', ()=> {
 //Functions
 
 function displayQuestion(){
-    if (currentQuestion < 20){
-    document.querySelector("#section-nuggets").innerText = data[currentSection].game
+
+    document.querySelector("#bannersection").src = section[currentSection]
+    // document.querySelector("#section-nuggets").innerText = data[currentSection].game
     document.querySelector("#input-nuggets").innerText = data[currentSection].questions[currentQuestion].questionName
     document.querySelector("#input-nuggets-a").innerText = data[currentSection].questions[currentQuestion].answers[0]
     document.querySelector("#input-nuggets-b").innerText = data[currentSection].questions[currentQuestion].answers[1]   
     document.querySelector("#input-nuggets-c").innerText = data[currentSection].questions[currentQuestion].answers[2]
     document.querySelector("#input-nuggets-d").innerText = data[currentSection].questions[currentQuestion].answers[3]
-}else if (currentQuestion > 20){
-    document.querySelector("#section-soup").innerText = data[currentSection].game
-    document.querySelector("#input-soup").innerText = data[currentSection].questions[currentQuestion].questionName
-    document.querySelector("#input-soup-a").innerText = data[currentSection].questions[currentQuestion].answers[0]
-    document.querySelector("#input-soup-b").innerText = data[currentSection].questions[currentQuestion].answers[1]   
-    document.querySelector("#input-soup-c").innerText = data[currentSection].questions[currentQuestion].answers[2]
-    }
+
 
 }
 //goes from a question to another
@@ -117,7 +117,7 @@ function nuggetsIteration(currentQuestion){
     return currentQuestion; 
 
 }
-
+let section =["./Assets/soup.gif","./Assets/nuggets.gif"]
 // sources of images to display the score
 let score =["./Assets/frame_00_delay-5s.png","./Assets/frame_01_delay-1s.png","./Assets/frame_02_delay-1s.png","./Assets/frame_03_delay-1s.png","./Assets/frame_04_delay-1s.png","./Assets/frame_05_delay-1s.png","./Assets/frame_06_delay-1s.png","./Assets/frame_07_delay-1s.png","./Assets/frame_08_delay-1s.png","./Assets/frame_09_delay-1s.png","./Assets/frame_10_delay-1s.png","./Assets/frame_11_delay-1s.png","./Assets/frame_12_delay-1s.png","./Assets/frame_13_delay-1s.png","./Assets/frame_14_delay-1s.png","./Assets/frame_15_delay-1s.png","./Assets/frame_16_delay-1s.png","./Assets/frame_17_delay-1s.png","./Assets/frame_18_delay-1s.png","./Assets/frame_19_delay-1s.png","./Assets/frame_20_delay-1s.png","./Assets/frame_21_delay-1s.png","./Assets/frame_22_delay-1s.png","./Assets/frame_23_delay-1s.png","./Assets/frame_24_delay-1s.png","./Assets/frame_25_delay-5s.png"]
 
@@ -128,18 +128,20 @@ function checkAnswer(event){
     if (event.target.innerText === question.answers[question.rightAnswer]){
         console.log("correct"); 
         currentScore ++
-          
-        // faire la manip DOM correspondante
-
     } else {
         console.log("wrong answer")
-
         // manipulation du DOM pour afficher la bonne réponse
     }
-    currentQuestion++ 
-        // if{
-    //     currentQuestion < data.game['Nuggets'].questions.length
-    //     return currentQuestion; 
+
+    if (currentQuestion < data[currentSection].questions.length-1) {
+        currentQuestion++
+    } else { 
+        currentSection ++
+        currentQuestion = 0 
+    }//     if (currentQuestion < data.game['Nuggets'].questions.length){
+    //       currentQuestion;   
+    //     }
+       
     // }   
     // else{ soupIteration()
     // }
@@ -165,6 +167,9 @@ function displayAnswer(currentScore){
     console.dir(document.querySelector("#scoreimg"))
 }
 
+// function displaySection(currentSection){
+// document.querySelector("#bannersection").src = section[currentSection]
+// }
 // function soupIteration()
 
 // console.log(currentScore)
