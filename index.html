@@ -4,59 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        </style>
 </head>
 <body>
 
+    <header class="header-intro">
+        <img src="/Assets/280px-Burger_Quiz.png">
+
+    </header>
 
     <!-- 1st screen -->
-    <section class="intro">
-        <header class="header-intro">
-            <img src="/Assets/280px-Burger_Quiz.png">
-    
-        </header>
+<section class="intro">
+
         <div class="body-intro">
         <container class="main-block">
-            <h2>Règles de Jeu</h2>
             <div class="tv">
-            <paragraph>Ceci est Burger Quiz,</paragraph>
+                <div class="tv-border">
+                        <h2 id="ketchup">Regles de Jeu</h2>
+                        <article>Bienvenue dans le jeu où la culture a rendez-vous avec la classe : Le Burger Quiz</article>
+
+                        <h2 id="mayo">But du Jeu</h2>
+                        <article>Arriver à 25 miams !</article>
+
+                </div>
             </div>
-            <h3>Choisis ton équipe</h3>
+            <h3>Choisis ton equipe</h3>
             <div class="btn-team">
-                <button class="btn-ketchup">Ketchup</button>
-                <button class="btn-mayo">Mayo</button>
+                <button class="btn-team" id="btn-ketchup" href=#secondscreen>Ketchup</button>
+                <button class="btn-team" id="btn-mayo">Mayo</button>
             </div>
         </container>
         <container class="main-block-img">
-            <img src="Assets/burgerquiz_piano.jpg">
+            <img src="Assets/burger-quiz.gif">
         </container>
         </div>
 
-    </section>
+</section>
 
 
     <!-- 2nd screen -->
-    <section class="2nd-screen">
+<section class="intro-nuggets">
+    <img src="./Assets/nuggets.gif">
+</section>
+
+<section class="second-screen" id="second-screen">
+    <container class="tv-container">
+        <div class="tv-2nd">
+            <div class="tv-2nd-border">
+                <container class="tv-2nd-screen">
+                    <container class="questions-nuggets">
+                        <p id='section-nuggets'></p>
+                        <p id="input-nuggets">Question 1
+                        </p>
+                        <ol >
+                            <li id="input-nuggets-a"><a class="reply"id="rep-a">A</a></li>
+                            <li id="input-nuggets-b"><a class="reply"id="rep-b">B</a></li>
+                            <li id="input-nuggets-c"><a class="reply"id="rep-c">C</a></li>
+                            <li id="input-nuggets-d"><a class="reply"id="rep-d">D</a></li>
+                        </ol>
+                    </container>
+                </container>
+            </div> 
+        </div>
+    </container>
+    <container class="score-container">
+
+            <!-- <img src="/Assets/280px-Burger_Quiz.png"> -->
+            <img class="score" id="scoreimg" src="./Assets/frame_00_delay-5s.png">
+    
+
+    </container>
+</section> 
+
+
+<!-- 3rd screen -->
+<!-- <section class="third-screen">
         <header class="header-2nd-screen">
             <img src="/Assets/280px-Burger_Quiz.png">
-            <img class="score" src="#">
+            <img class="score" id="scoreimg" src="./Assets/frame_00_delay-5s.png">
     
         </header>
         <div class="tv">
+        <div class="tv-border">
             <container class="screen">
-                <container class="questions-nuggets">
-                    <p id='section-name'>Section</p>
-                    <img id="img-nuggets" src="#">
-                    <p id="input-nuggets">Question 1
+                <container class="questions-soup">
+                    <p id='section-soup'>Section</p>
+                    <img id="img-soups" src="#">
+                    <p id="input-soup">Question 1
                     </p>
                     <ol>
-                        <li id="input-nuggets-a"><a class="reply"id="rep-a">A</a></li>
-                        <li id="input-nuggets-b"><a class="reply"id="rep-b">B</a></li>
-                        <li id="input-nuggets-c"><a class="reply"id="rep-c">C</a></li>
-                        <li id="input-nuggets-d"><a class="reply"id="rep-d">D</a></li>
+                        <li id="input-soup-a"><a class="reply"id="rep-a">A</a></li>
+                        <li id="input-soup-b"><a class="reply"id="rep-b">B</a></li>
+                        <li id="input-soup-c"><a class="reply"id="rep-c">C</a></li>
                     </ol>
+                </container>
             </container>
-        </container>
+        </div> 
+        </div>
+</section>  -->
+
+
 </body>
 </html>
